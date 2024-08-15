@@ -84,7 +84,7 @@ export default function Register() {
           onClick={handleLoginRedirect}
           className="mt-4 text-blue-500 hover:underline"
         >
-          Already have an account? Login
+          มีบัญชีอยู่แล้ว? เข้าสู่ระบบ
         </button>
         <p>Website by Phongnawat Boonekarree</p>
       </div>

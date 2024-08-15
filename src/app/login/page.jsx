@@ -76,7 +76,7 @@ export default function Login() {
           onClick={handleSignupRedirect}
           className="mt-4 text-blue-500 hover:underline"
         >
-          Don't have an account? Sign Up
+          ยังไม่มีบัญชี? ลงทะเบียน
         </button>
         <p>Website by Phongnawat Boonekarree</p>
       </div>

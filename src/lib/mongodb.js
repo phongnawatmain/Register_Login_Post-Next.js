@@ -1,29 +1,19 @@
+// src/lib/mongodb.js
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const dbConnect = async () => {
+  if (mongoose.connection.readyState >= 1) return;
 
-let cached = globalThis.cached || { conn: null, promise: null };
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+    throw new Error('Failed to connect to MongoDB');
+  }
+};
 
-export const connectMongoDB = async () => {
-    if (cached.conn) return cached.conn;
-
-    if (!cached.promise) {
-        const opts = {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            bufferCommands: false,
-        };
-
-        cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-            console.log("Connected to mongodb");
-            return mongoose;
-        }).catch(error => {
-            console.log("Error connecting to mongodb:", error);
-            throw error;
-        });
-    }
-    cached.conn = await cached.promise;
-    return cached.conn;
-}
-
-export default connectMongoDB;
+export default dbConnect;

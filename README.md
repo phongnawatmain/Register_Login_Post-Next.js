@@ -5,13 +5,22 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. สร้างไฟล์ .env
+MONGODB_URI=
+JWT_SECRET=
+
+2. run code // "npm run dev"
+
+3. เสร็จเรียบร้อย
+
+ฐานข้อมูลของ Mangodb // https://www.mongodb.com/
+//
+npx create-next-app my-nextjs-app
+cd my-nextjs-app
+npm install
+
+npm install mongoose
+//
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
