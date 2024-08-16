@@ -5,22 +5,24 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-1. สร้างไฟล์ .env
-MONGODB_URI=
-JWT_SECRET=
+1. npx create-next-app my-nextjs-app // สร้าง Folder
+2. cd my-nextjs-app // เข้าไปใน Folder
 
-2. run code // "npm run dev"
+3. npm install // โหลด modules
+4. npm install mongoose // โหลด modules
+5. npm install bcrypt // โหลด modules
 
-3. เสร็จเรียบร้อย
+6. สร้างไฟล์ .env
+MONGODB_URI= // จาก Mangodb
+JWT_SECRET= // คีย์ของคุณ
+
+7. npm run dev // เปิดการทำงาน
 
 ฐานข้อมูลของ Mangodb // https://www.mongodb.com/
-//
-npx create-next-app my-nextjs-app
-cd my-nextjs-app
-npm install
-
-npm install mongoose
-//
+/
+Developed by Phongnawat Boonekarree
+(https://github.com/phongnawatmain)
+/
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
